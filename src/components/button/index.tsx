@@ -1,4 +1,5 @@
-import Link from 'next/link';
+
+import { Link } from 'react-router-dom';
 import styles from './index.module.scss'
 import Icon from '@/components/icons'
 
@@ -16,7 +17,7 @@ type ButtonProps = {
 }
 export default function Button({ ...props }: ButtonProps) {
   return (
-    <Link href={"#"}
+    <Link to={"#"}
       data-size={props?.size}
       className={`${styles.button} ${props?.variant}`} style={{ marginTop: props?.mt || 0, marginBottom: props?.mb || 0, width: props?.fullWidth ? '100%' : 'fit-content' }}>
       {props?.icon && <Icon icon={props?.icon} width={props?.iconWidth} height={props?.iconHeight} fill={props?.iconColor} />}

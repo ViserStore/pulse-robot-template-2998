@@ -1,7 +1,8 @@
+
 import { FooterMenuData } from '@/data/footerMenu'
 import Container from '../container'
 import styles from './index.module.scss'
-import Link from 'next/link'
+import { Link } from 'react-router-dom'
 import FooterSelects from '@/views/footerSelects'
 
 export default function Footer() {
@@ -35,13 +36,12 @@ export default function Footer() {
                         {
                           sub?.data?.map((data, dataIndex) => (
                             <li key={dataIndex}>
-                              <Link href={"#"}>
+                              <Link to="#">
                                 {data?.title}
                               </Link>
                             </li>
                           ))
                         }
-
                       </ul>
                     </div>
                   ))
@@ -54,7 +54,7 @@ export default function Footer() {
           <hr className={styles.hr} />
           <div className={styles.links}>
             <span> Binance© 2023</span>
-            <Link href={"#"}>Cookie Preferences</Link>
+            <Link to="#">Cookie Preferences</Link>
           </div>
         </div>
       </Container>

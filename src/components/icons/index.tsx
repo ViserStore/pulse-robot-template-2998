@@ -1,3 +1,4 @@
+
 import React from "react";
 
 // icon library
@@ -18,6 +19,12 @@ interface Props {
 
 const Icon = React.memo(({ icon, ...props }: Props) => {
   const match: Match = {
+    logo: () => (
+      <svg width="120" height="24" viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8.7 12L4.35 16.35L0 12L4.35 7.65L8.7 12ZM12 8.7L16.35 4.35L20.7 8.7L16.35 13.05L12 8.7ZM12 15.3L16.35 19.65L20.7 15.3L16.35 10.95L12 15.3ZM23.4 12L19.05 7.65L23.4 3.3L27.75 7.65L23.4 12Z" fill="#F0B90B"/>
+        <text x="35" y="16" fill="#1E2329" fontSize="16" fontWeight="600">Binance</text>
+      </svg>
+    ),
     gift: <Icons.GiftIcon {...props} />,
     chevronRight: <Icons.ChevronRightIcon {...props} />,
     user: <Icons.UserIcon {...props} />,

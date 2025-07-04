@@ -1,28 +1,25 @@
-"use client"
-import Image from 'next/image'
+
+import { useState } from 'react'
 import styles from './index.module.scss'
-import Images from '@/constants/images'
 import { HeaderSearch, NavigationMenus, QrDownload } from '@/views'
 import Icon from '@/components/icons'
-import Link from 'next/link'
-import { useState } from 'react'
-import { useTheme } from 'next-themes'
-
+import { Link } from 'react-router-dom'
 
 export default function Header() {
   const [search, setSearch] = useState<Boolean>(false)
   const [qrDownload, setQrDownload] = useState<Boolean>(false)
   const [globe, setGlobe] = useState<Boolean>(false)
-  const { theme, setTheme } = useTheme()
+  const [theme, setTheme] = useState('light')
 
   return (
     <header className={styles.header}>
       <div className={styles.left}>
         <div className={styles.logo}>
-          <Image src={Images.Logo} alt='Logo' width={120} height={24} />
+          <Link to="/">
+            <Icon icon="logo" width={120} height={24} />
+          </Link>
         </div>
         <NavigationMenus />
-
       </div>
       <div className={styles.right}>
         <ul>
@@ -38,12 +35,12 @@ export default function Header() {
           </li>
           <li>
             <div className={styles.element}>
-              <span className={styles.text}>Log In</span>
+              <Link to="/login" className={styles.text}>Log In</Link>
             </div>
           </li>
           <li>
             <div className={styles.element}>
-              <Link href={"#"} className={`${styles.button}`}>
+              <Link to="#" className={`${styles.button}`}>
                 <Icon icon={'gift'} />
                 Register
               </Link>

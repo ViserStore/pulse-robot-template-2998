@@ -1,6 +1,6 @@
 
 import { useState } from 'react'
-import Link from 'next/link'
+import { Link } from 'react-router-dom'
 import { Button } from '@/components'
 import styles from './index.module.scss'
 import Icon from '@/components/icons'
@@ -21,7 +21,7 @@ export default function LoginPage() {
     <div className={styles.loginContainer}>
       <div className={styles.loginCard}>
         <div className={styles.header}>
-          <Link href="/" className={styles.logo}>
+          <Link to="/" className={styles.logo}>
             <Icon icon="logo" width={120} height={40} />
           </Link>
           <h1 className={styles.title}>Log In to Binance</h1>
@@ -78,7 +78,7 @@ export default function LoginPage() {
               <span className={styles.checkmark}></span>
               Remember me
             </label>
-            <Link href="/forgot-password" className={styles.forgotLink}>
+            <Link to="/forgot-password" className={styles.forgotLink}>
               Forgot password?
             </Link>
           </div>
@@ -115,7 +115,7 @@ export default function LoginPage() {
         <div className={styles.footer}>
           <p>
             Don't have an account?{' '}
-            <Link href="/register" className={styles.registerLink}>
+            <Link to="/register" className={styles.registerLink}>
               Sign up for free
             </Link>
           </p>
